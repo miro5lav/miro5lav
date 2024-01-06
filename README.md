@@ -1,3 +1,7 @@
+layout: page
+title: "About-me"
+permalink: /about
+
 - 👋 Hi, I’m @miro5lav
 - 👀 I’m interested in sailing and traveling.
 - 🌱 I’m currently learning Python and how to use Snowflake .
