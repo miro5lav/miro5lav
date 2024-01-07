@@ -1,17 +1,16 @@
+---
 layout: page
 title: "About-me"
 permalink: /about/contact
-
+---
 <br>
 <h1>
 I am G-Data Engineer
 </h1>
 <br>
-
 <div class="container">
-  <form id="form" class="topBefore" method="post" action="mailto:mirrad@10g.pl>
-
-    <label for="fname">First Name</label>
+  <form id="form" class="topBefore" method="post" action="mailto:mirrad@10g.pl">
+    <center><label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
     <br>
     <label for="lname">Last Name</label>
@@ -25,9 +24,9 @@ I am G-Data Engineer
     </select>
     <br>
     <label for="subject">Subject</label> <br>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea halign="center" id="subject" name="subject" placeholder="Write something.." style="height:200px;"></textarea>
     <br>
     <input type="submit" value="Submit">
-
+    </center>
   </form>
 </div>
