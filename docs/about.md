@@ -1,26 +1,28 @@
-<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
-<!-- <script type="text/javascript">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
     (function() {
         // https://dashboard.emailjs.com/admin/account
-        emailjs.init('YOUR_PUBLIC_KEY');
+        emailjs.init('T04vjc-ugM4jOvwZ2');
     })();
 </script>
 <script type="text/javascript">
     window.onload = function() {
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = Math.random() * 100000 | 0;
-            // these IDs from the previous steps
-            emailjs.sendForm('<your service ID>', '<your template ID>', this)
-                .then(function() {
-                    console.log('SUCCESS!');
-                }, function(error) {
-                    console.log('FAILED...', error);
-                });
-        });
-    } 
-</script>-->
+            if valid_email($('input[name=user_email]').val())  {
+              // generate a five digit number for the contact_number variable  
+              this.contact_number.value = Math.random() * 100000 | 0;
+              // these IDs from the previous steps
+              emailjs.sendForm('service_4xyaq4h', 'template_fbrmfwm', this)
+                  .then(function() {
+                      console.log('SUCCESS!');
+                  }, function(error) {
+                      console.log('FAILED...', error);
+                  });
+          });
+        }
+    }
+</script>
 <hr/>
 <br>
 <h1>
@@ -29,7 +31,7 @@ I am Data Engineer and Business Intelligence Consultant
 
 <br>
 <div class="form">
-  <form id="form" class="form" method="post" halign="center" action="mailto:mirrad@10g.pl">
+  <form id="form" class="form" method="post" halign="center" action="mailto:miro5lav@10g.pl">
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
     <br>
