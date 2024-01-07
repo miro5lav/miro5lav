@@ -9,7 +9,7 @@
     window.onload = function() {
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            if valid_email($('input[name=user_email]').val())  {
+              //if valid_email($('input[name=user_email]').val())  {
               // generate a five digit number for the contact_number variable  
               this.contact_number.value = Math.random() * 100000 | 0;
               // these IDs from the previous steps
@@ -19,8 +19,9 @@
                   }, function(error) {
                       console.log('FAILED...', error);
                   });
+              //}    
           });
-        }
+       
     }
 </script>
 <hr/>
