@@ -9,7 +9,8 @@
     window.onload = function() {
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-              //if valid_email($('input[name=user_email]').val())  {
+              //button_timeout($('input[name=ejs_input]') ); 
+              if valid_email($('input[name=user_email]').val())  {
               // generate a five digit number for the contact_number variable  
               this.contact_number.value = Math.random() * 100000 | 0;
               // these IDs from the previous steps
@@ -19,7 +20,7 @@
                   }, function(error) {
                       console.log('FAILED...', error);
                   });
-              //}    
+              }    
           });
        
     }
@@ -64,7 +65,7 @@ I am Data Engineer and Business Intelligence Consultant
         <!-- add adress and country code -->  
         <label>Message</label>
         <textarea name="message"></textarea><br>
-        <input type="submit" value="Send">
+        <input type="submit" value="Send" name="ejs_input" onclick="button_timeout(this);">
         <button onclick="valid_email($('input[name=user_email]').val())"> Validate Email </button>
         </form>
 </div>

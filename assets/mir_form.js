@@ -10,3 +10,11 @@ function valid_email(booking_email) {
     return false;
     }
 }
+
+// make disabled button after click
+function button_timeout(obj) {
+    obj.disabled = true;
+    setTimeout(function() {
+        obj.disabled = false;
+    }, 3000);
+}​
