@@ -9,19 +9,4 @@
 miro5lav/miro5lav is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
-<header>CONTACT FORM</header>
-
-<form id="form" class="topBefore" method="post" action="mailto:mirrad@10g.pl">
-		
-		  <p><input id="name" type="text" placeholder="NAME"></p><br>
-		  <p><input id="email" type="text" placeholder="E-MAIL"></p><br>
-		  <p><textarea id="message" type="text" placeholder="MESSAGE"></textarea></p><br>
-  <input id="submit" type="submit" value="Send Email">
-  
-</form>
-
-<form action=https://buttondown.email/api/emails/embed-subscribe/<my-new_account> method=post target=popupwindow onsubmit='window.open("https://buttondown.email/<my-new_account>","popupwindow")' 
-class=embeddable-buttondown-form><input type=email required name=email placeholder="Enter your email address" id=bd-email>
-<input type=hidden value=1 name=embed><input type=submit value="Subscribe to Newsletter">
-</form> 
 <!-- -->
