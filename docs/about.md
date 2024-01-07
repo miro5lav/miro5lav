@@ -59,6 +59,9 @@ I am Data Engineer and Business Intelligence Consultant
         <input type="text" name="user_name"><br>
         <label>Email</label>
         <input type="email" name="user_email"><br>
+        <label>Full Phone with Country Code</label>
+        <input type="phone" name="user_phone"><br>
+        <!-- add adress and country code -->  
         <label>Message</label>
         <textarea name="message"></textarea><br>
         <input type="submit" value="Send">
