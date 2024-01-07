@@ -9,3 +9,13 @@
 miro5lav/miro5lav is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+<header>CONTACT FORM</header>
+
+<form id="form" class="topBefore">
+		
+		  <input id="name" type="text" placeholder="NAME">
+		  <input id="email" type="text" placeholder="E-MAIL">
+		  <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+  <input id="submit" type="submit" value="GO!">
+  
+</form>
