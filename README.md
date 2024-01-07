@@ -1,6 +1,3 @@
-layout: page
-title: "About-me"
-permalink: /about
 
 - 👋 Hi, I’m @miro5lav
 - 👀 I’m interested in sailing and traveling.
