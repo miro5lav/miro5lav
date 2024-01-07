@@ -1,1 +1,1 @@
-alert("Hello my friend !")
+alert("💋 💋 💋 💖 Hello my friend ! 💋 💋 💋 💖")

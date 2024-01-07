@@ -11,11 +11,11 @@ You can click the Preview link to take a look at your changes.
 --->
 <header>CONTACT FORM</header>
 
-<form id="form" class="topBefore">
+<form id="form" class="topBefore" method="post" action="mailto:mirrad@10g.pl">
 		
-		  <input id="name" type="text" placeholder="NAME">
-		  <input id="email" type="text" placeholder="E-MAIL">
-		  <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-  <input id="submit" type="submit" value="GO!">
+		  <p><input id="name" type="text" placeholder="NAME"></p><br>
+		  <p><input id="email" type="text" placeholder="E-MAIL"></p><br>
+		  <p><textarea id="message" type="text" placeholder="MESSAGE"></textarea></p><br>
+  <input id="submit" type="submit" value="Send Email">
   
 </form>
