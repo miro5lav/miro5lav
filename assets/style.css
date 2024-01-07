@@ -16,6 +16,8 @@ form  {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+  width: 60%;
+  padding: 10px;
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -104,12 +106,6 @@ header {
   font-size: 2.3em;
   text-align: center;
   letter-spacing: 7px;
-}
-
-#form {
-  position: relative;
-  width: 500px;
-  margin: 50px auto 100px auto;
 }
 
 input {

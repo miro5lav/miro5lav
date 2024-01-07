@@ -1,7 +1,3 @@
-<!-- layout: page
-title: "About-me"
-permalink: /about/contact
---- -->
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
 <!-- <script type="text/javascript">
     (function() {
@@ -23,12 +19,14 @@ permalink: /about/contact
                     console.log('FAILED...', error);
                 });
         });
-    } -->
-</script>
+    } 
+</script>-->
+<hr/>
 <br>
 <h1>
-I am G-Data Engineer
+I am Data Engineer and Business Intelligence Consultant
 </h1>
+
 <br>
 <div class="form">
   <form id="form" class="form" method="post" halign="center" action="mailto:mirrad@10g.pl">
@@ -49,6 +47,8 @@ I am G-Data Engineer
     <textarea halign="center" id="subject" name="subject" placeholder="Write something.." style="height:200px;"></textarea>
     <br>
     <input type="submit" value="Submit">   
+  <hr/>
+<h3> If you wish to subscribe to email fill data below</h3>
   </form>
       <form class="form" id="contact-form">
         <input type="hidden" name="contact_number">
