@@ -15,8 +15,10 @@
               emailjs.sendForm('service_4xyaq4h', 'template_fbrmfwm', this)
                   .then(function() {
                       console.log('SUCCESS!');
+                      alert("Email has been send my friend 💖"));
                   }, function(error) {
                       console.log('FAILED...', error);
+                      alert("Something went wrong.Check Console!"));
                   });   
           });
        
@@ -59,10 +61,9 @@ I am Data Engineer and Business Intelligence Consultant
         <input type="email" name="user_email"><br>
         <label>Full Phone with Country Code</label>
         <input type="phone" name="user_phone"><br>
-        <!-- add adress and country code -->  
         <label>Message</label>
         <textarea name="message"></textarea><br>
         <input type="submit" value="Send" name="ejs_input" onclick="button_timeout(this);">
-        <button onclick="valid_email($('input[name=user_email]').val())"> Validate Email </button>
+        <!-- <button onclick="valid_email($('input[name=user_email]').val())"> Validate Email </button> -->
         </form>
 </div>
