@@ -15,10 +15,10 @@
               emailjs.sendForm('service_4xyaq4h', 'template_fbrmfwm', this)
                   .then(function() {
                       console.log('SUCCESS!');
-                      alert("Email has been send my friend 💖"));
+                      alert("Email has been send my friend 💖");
                   }, function(error) {
                       console.log('FAILED...', error);
-                      alert("Something went wrong.Check Console!"));
+                      alert("Something went wrong.Check Console!");
                   });   
           });
        
