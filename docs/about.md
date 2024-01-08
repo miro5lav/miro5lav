@@ -8,7 +8,7 @@
     window.onload = function() {
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-              //button_timeout($('input[name=ejs_input]') ); 
+              this.button_timeout($('input[name=ejs_input]') ); 
               // generate a five digit number for the contact_number variable  
               this.contact_number.value = Math.random() * 100000 | 0;
               // these IDs from the previous steps
@@ -31,39 +31,20 @@ I am Data Engineer and Business Intelligence Consultant
 </h1>
 
 <br>
-<div class="form">
-  <form id="form" class="form" method="post" halign="center" action="mailto:miro5lav@10g.pl">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    <br>
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    <br>
-    <label for="country">Title</label>
-    <select id="country" name="country">
-      <option value="job">Job Offer</option>
-      <option value="teamwork">Collaboration</option>
-      <option value="money">Special Offer</option>
-    </select>
-    <br>
-    <label for="subject">Subject</label> <br>
-    <textarea halign="center" id="subject" name="subject" placeholder="Write something.." style="height:200px;"></textarea>
-    <br>
-    <input type="submit" value="Submit">   
   <hr/>
-<h3> If you wish to subscribe to email fill data below</h3>
-  </form>
+<h3> If you wish to contact me fill data below</h3>
+<div class="form" >
       <form class="form" id="contact-form">
         <input type="hidden" name="contact_number">
-        <label>Name</label>
+        <label>Name</label><br>
         <input type="text" name="user_name"><br>
-        <label>Email</label>
+        <label>Email</label><br>
         <input type="email" name="user_email"><br>
-        <label>Full Phone with Country Code</label>
+        <label>Full Phone with Country Code</label><br>
         <input type="phone" name="user_phone"><br>
-        <label>Message</label>
-        <textarea name="message"></textarea><br>
-        <input type="submit" value="Send" name="ejs_input" onclick="button_timeout(this);">
+        <label>Your Message</label><br>
+        <textarea name="message" rows="12" cols="80"></textarea><br>
+        <input type="submit" value="Send" name="ejs_input" >
         <!-- <button onclick="valid_email($('input[name=user_email]').val())"> Validate Email </button> -->
         </form>
 </div>
