@@ -16,5 +16,5 @@ function button_timeout(obj) {
     obj.disabled = true;
     setTimeout(function() {
         obj.disabled = false;
-    }, 3000);
+    }, 10000);
 }​

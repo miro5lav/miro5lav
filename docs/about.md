@@ -1,7 +1,6 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script type="text/javascript">
     (function() {
-        // https://dashboard.emailjs.com/admin/account
         emailjs.init('T04vjc-ugM4jOvwZ2');
     })();
 </script>
@@ -10,7 +9,6 @@
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
               //button_timeout($('input[name=ejs_input]') ); 
-              if valid_email($('input[name=user_email]').val())  {
               // generate a five digit number for the contact_number variable  
               this.contact_number.value = Math.random() * 100000 | 0;
               // these IDs from the previous steps
@@ -19,8 +17,7 @@
                       console.log('SUCCESS!');
                   }, function(error) {
                       console.log('FAILED...', error);
-                  });
-              }    
+                  });   
           });
        
     }
