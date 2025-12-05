@@ -20,6 +20,8 @@ form  {
   padding: 10px;
 }
 
+h1   {color: blue;}
+
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #aca49c;
   font-size: 0.875em;
@@ -97,7 +99,7 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
 body {
   font-family: 'Lato', sans-serif;
   background: #e2dedb;
-  color: #b3aca7;
+  color: #c99671;
 }
 
 header {
