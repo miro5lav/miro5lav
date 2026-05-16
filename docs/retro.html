@@ -4,6 +4,7 @@ title: Retro Profile Pages
 permalink: /retro/
 ---
 <div class="page retro-page">
+  <canvas id="snow-canvas" class="snow-canvas" aria-hidden="true"></canvas>
   <header class="retro-hero">
     <div class="top-badge">
       <span>90s Mode</span>
@@ -18,19 +19,19 @@ permalink: /retro/
 
       <div class="carousel-slides">
         <figure class="slide slide1">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/earth.jpg" alt="Mistress of the Moonlit Depths">
+          <img src="{{ '/images/earth.jpg' | relative_url }}" alt="Mistress of the Moonlit Depths">
           <figcaption>Web data studio preview</figcaption>
         </figure>
         <figure class="slide slide2">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/fire.jpg" alt="the Flameborne Valkyrie">
+          <img src="{{ '/images/fire.jpg' | relative_url }}" alt="the Flameborne Valkyrie">
           <figcaption>Datasets, dashboards, and pipelines</figcaption>
         </figure>
         <figure class="slide slide3">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/water.jpg" alt="Realm: The Mother of Life">
+          <img src="{{ '/images/water.jpg' | relative_url }}" alt="Realm: The Mother of Life">
           <figcaption>Modern analytics in a pixel frame</figcaption>
         </figure>
         <figure class="slide slide4">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/wind.jpg" alt="Seraphina of the Azure Skies<">
+          <img src="{{ '/images/wind.jpg' | relative_url }}" alt="Seraphina of the Azure Skies">
           <figcaption>AI assistant meets data engineering</figcaption>
         </figure>
       </div>
@@ -39,7 +40,7 @@ permalink: /retro/
         <label for="slide1">earth</label>
         <label for="slide2">fire</label>
         <label for="slide3">water</label>
-        <label for="slide4">wind</label>s
+        <label for="slide4">wind</label>
       </div>
     </div>
 
@@ -85,3 +86,69 @@ permalink: /retro/
     <p>Connect on LinkedIn to discuss Python, Snowflake, dbt, Power BI, Airflow, Streamlit, and AI-powered analytics solutions.</p>
   </footer>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const canvas = document.getElementById('snow-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    const flakes = [];
+    const count = 120;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createFlake() {
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: 1 + Math.random() * 3,
+        d: Math.random() * count,
+        tilt: Math.random() * 10 - 10,
+        tiltAngle: 0,
+        tiltSpeed: 0.05 + Math.random() * 0.05
+      };
+    }
+
+    function updateFlakes() {
+      for (const flake of flakes) {
+        flake.tiltAngle += flake.tiltSpeed;
+        flake.y += Math.cos(flake.d) + 1 + flake.r / 2;
+        flake.x += Math.sin(flake.tiltAngle) * 2;
+        flake.tilt = Math.sin(flake.tiltAngle) * 10;
+
+        if (flake.y > height + 5) {
+          flake.y = -10;
+          flake.x = Math.random() * width;
+          flake.d = Math.random() * count;
+        }
+
+        if (flake.x > width + 5) {
+          flake.x = -5;
+        }
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+      for (const flake of flakes) {
+        ctx.beginPath();
+        ctx.arc(flake.x + flake.tilt, flake.y, flake.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      updateFlakes();
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    for (let i = 0; i < count; i += 1) {
+      flakes.push(createFlake());
+    }
+
+    window.addEventListener('resize', resize);
+    draw();
+  });
+</script>
