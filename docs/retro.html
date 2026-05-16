@@ -13,17 +13,17 @@ permalink: /retro/
 
 
     <div class="hero-copy">
-      <h2>Hi, I’m miro5lav</h2>
+      <h1>Hi, I’m miro5lav</h1>
       <p>Welcome to my profile page built for GitHub Pages with modern HTML5 structure. 
         I combine a nostalgic aesthetic look with current tools for data engineering and analytics.</p>
       <p>My interests includes sailing, biking , learning Python, and exploring Snowflake. 
         I build collaborative Python and SQL projects with modern data stack tools.</p>
     </div>
         <div class="retro-carousel">
-      <!-- <input type="radio" id="slide1" name="carousel" checked>
+      <input type="radio" id="slide1" name="carousel" checked>
       <input type="radio" id="slide2" name="carousel">
       <input type="radio" id="slide3" name="carousel">
-      <input type="radio" id="slide4" name="carousel"> -->
+      <input type="radio" id="slide4" name="carousel">
 
       <div class="carousel-slides">
         <figure class="slide slide1">
@@ -160,16 +160,5 @@ permalink: /retro/
 
     window.addEventListener('resize', resize);
     draw();
-
-    // Scroll to carousel when label is clicked
-    const carouselLabels = document.querySelectorAll('.carousel-controls label');
-    carouselLabels.forEach(label => {
-      label.addEventListener('click', function() {
-        const carousel = document.querySelector('.retro-carousel');
-        if (carousel) {
-          carousel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
   });
 </script>
