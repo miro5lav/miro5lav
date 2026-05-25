@@ -1,0 +1,23 @@
+{
+  "name": "GitHub Pages (Jekyll)",
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2",
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Site",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "bundle install",
+  "postStartCommand": "bash .devcontainer/serve.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "sissel.shopify-liquid",
+        "davidanson.vscode-markdownlint"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
