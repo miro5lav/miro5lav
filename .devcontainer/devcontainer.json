@@ -1,0 +1,23 @@
+{
+  "name": "GitHub Pages (Jekyll)",
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2",
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Site",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename} && bundle install --gemfile=docs/Gemfile",
+  "postStartCommand": "cd /workspaces/${localWorkspaceFolderBasename}/docs && bundle exec jekyll serve --livereload --drafts --future --host 0.0.0.0 --port 4000 --baseurl '' --destination /tmp/jekyll_site",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "sissel.shopify-liquid",
+        "davidanson.vscode-markdownlint"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}

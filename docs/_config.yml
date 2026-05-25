@@ -1,0 +1,14 @@
+title: Miroslav's homepage
+description: Bookmark this to keep an eye on news updates!
+google-analytics: G-5XN73CHNYP
+theme: minima
+
+minima:
+  skin: classic   # options: classic | dark | solarized | solarized-dark
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+# Tell Jekyll where your content root is
+source: docs
+destination: /tmp/jekyll_site
