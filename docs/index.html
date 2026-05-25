@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' }}"> 
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <script src="{{ '/assets/mir_form.js' | relative_url }}"></script>
@@ -29,7 +29,6 @@
       </div><!-- end header -->
 
     <div class="wrapper">
-    <canvas id="snow-canvas" class="snow-canvas" aria-hidden="true"></canvas>
       <section>
         <div id="title">
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
@@ -41,13 +40,14 @@
         <div class="page-link">
           <p><strong>New page:</strong> <a href="/retro/">Retro-Modern Profile Portal</a> — 90s-inspired design with modern HTML5 structure.</p>
         </div>
-		
-- 👋 Hi, I’m @miro5lav
-- 👀 I’m interested in sailing and traveling.
-- 🌱 I’m currently learning Python and how to use Snowflake .
-- 💞️ I’m looking to collaborate on Python and SQL projects with modern datastack tools.
-- 📫 You can reach me on LinkedIn : https://www.linkedin.com/in/mirrad/.
-
+        </div>
+<p halign = "center">		
+- 👋 Hi, I’m @miro5lav<br>
+- 👀 I’m interested in sailing and traveling.<br>
+- 🌱 I’m currently learning Python and how to use Snowflake .<br>
+- 💞️ I’m looking to collaborate on Python and SQL projects with modern datastack tools.<br>
+- 📫 You can reach me on <a href="https://www.linkedin.com/in/mirrad/">LinkedIn</a>.<br>
+</p>
 <!---
 miro5lav/miro5lav is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
