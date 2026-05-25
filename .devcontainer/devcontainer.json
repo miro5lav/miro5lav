@@ -8,8 +8,8 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "bundle install",
-  "postStartCommand": "bash .devcontainer/serve.sh",
+  "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename} && bundle install --gemfile=docs/Gemfile",
+  "postStartCommand": "cd /workspaces/${localWorkspaceFolderBasename}/docs && bundle exec jekyll serve --livereload --drafts --future --host 0.0.0.0 --port 4000 --baseurl ''",
   "customizations": {
     "vscode": {
       "extensions": [
