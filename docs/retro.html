@@ -3,14 +3,15 @@ layout: default
 title: Retro Profile Pages
 permalink: /retro/
 ---
+<link rel="stylesheet" href="{{ '/assets/style.css?v=' | append: site.github.build_revision | relative_url }}">
 <div class="page retro-page">
+  <canvas id="snow-canvas" class="snow-canvas" aria-hidden="true"></canvas>
   <header class="retro-hero">
     <div class="top-badge">
-      <span>90s Mode</span>
       <span>Modern HTML5 + GitHub Pages</span><br></br>
     </div>
 
-    <div class="retro-carousel">
+        <div class="retro-carousel">
       <input type="radio" id="slide1" name="carousel" checked>
       <input type="radio" id="slide2" name="carousel">
       <input type="radio" id="slide3" name="carousel">
@@ -18,19 +19,19 @@ permalink: /retro/
 
       <div class="carousel-slides">
         <figure class="slide slide1">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/earth.jpg" alt="Mistress of the Moonlit Depths">
+          <img src="{{ '/images/earth.jpg' | relative_url }}" alt="Mistress of the Moonlit Depths">
           <figcaption>Web data studio preview</figcaption>
         </figure>
         <figure class="slide slide2">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/fire.jpg" alt="the Flameborne Valkyrie">
+          <img src="{{ '/images/fire.jpg' | relative_url }}" alt="the Flameborne Valkyrie">
           <figcaption>Datasets, dashboards, and pipelines</figcaption>
         </figure>
         <figure class="slide slide3">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/water.jpg" alt="Realm: The Mother of Life">
+          <img src="{{ '/images/water.jpg' | relative_url }}" alt="Realm: The Mother of Life">
           <figcaption>Modern analytics in a pixel frame</figcaption>
         </figure>
         <figure class="slide slide4">
-          <img src="https://github.com/miro5lav/fantasy-realm/blob/master/images/wind.jpg" alt="Seraphina of the Azure Skies<">
+          <img src="{{ '/images/wind.jpg' | relative_url }}" alt="Seraphina of the Azure Skies">
           <figcaption>AI assistant meets data engineering</figcaption>
         </figure>
       </div>
@@ -39,20 +40,22 @@ permalink: /retro/
         <label for="slide1">earth</label>
         <label for="slide2">fire</label>
         <label for="slide3">water</label>
-        <label for="slide4">wind</label>s
+        <label for="slide4">wind</label>
       </div>
     </div>
+        <div class="hero-copy">
 
-    <div class="hero-copy">
-      <h1>Hi, I’m @miro5lav</h1>
-      <p>Welcome to a retro-inspired profile page built for GitHub Pages with modern HTML5 structure. I combine a nostalgic aesthetic look with current tools for data engineering and analytics.</p>
-      <p>My interests include sailing, biking , learning Python, and exploring Snowflake. I build collaborative Python and SQL projects with modern data stack tools.</p>
+      <p>Welcome to my profile page built for GitHub Pages with modern HTML5 structure. 
+        I combined a nostalgic aesthetic look with current tools for data engineering and analytics.</p>
+      <p>My interests includes sailing, biking , learning Python, and exploring Snowflake. 
+        I build collaborative Python and SQL projects with modern data stack tools.</p>
     </div>
   </header>
 
   <main>
     <section class="profile-summary">
       <h2>About me</h2>
+      <h3>Data Engineer & BI Consultant</h3>
       <p>I’m a Data Engineer and Business Intelligence Consultant focused on delivering clean, maintainable solutions. My work includes cloud analytics, orchestration, and building data tools for teams that need dependable reporting and automation.</p>
     </section>
 
@@ -73,15 +76,87 @@ permalink: /retro/
         <h3>Orchestration</h3>
         <p>Airflow and similar orchestration tools help me keep pipelines reliable, reusable, and easy to monitor.</p>
       </article>
+      <article>
+        <h3>Visualization</h3>
+        <p>Streamlit and similar tools help me create interactive visualizations and dashboards that make data more accessible and actionable.</p>
+      </article> 
+      <article>
+        <h3>Data Science</h3>
+        <p>With Jupyter Notebooks and Python libraries like pandas and scikit-learn, I analyze data to extract insights and build predictive models.</p>
+      </article>            
     </section>
 
     <section class="tech-notes">
       <h2>Modern tools & AI</h2>
-      <p>I enjoy using Streamlit for fast, interactive Python apps and building prototypes that make data workflows visible. I also explore AI chatbot assistants for coding support, improving productivity while collaborating on analytics projects.</p>
+      <p>I enjoy using VS Code Assistant for fast, interactive Python apps and building prototypes that make data workflows visible. I also explore AI chatbot assistants for coding support, improving productivity while collaborating on analytics projects.</p>
     </section>
   </main>
+  {% include footer-custom.html %}
 
-  <footer class="retro-footer">
-    <p>Connect on LinkedIn to discuss Python, Snowflake, dbt, Power BI, Airflow, Streamlit, and AI-powered analytics solutions.</p>
-  </footer>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const canvas = document.getElementById('snow-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    const flakes = [];
+    const count = 120;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createFlake() {
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: 1 + Math.random() * 3,
+        d: Math.random() * count,
+        tilt: Math.random() * 10 - 10,
+        tiltAngle: 0,
+        tiltSpeed: 0.05 + Math.random() * 0.05
+      };
+    }
+
+    function updateFlakes() {
+      for (const flake of flakes) {
+        flake.tiltAngle += flake.tiltSpeed;
+        flake.y += Math.cos(flake.d) + 1 + flake.r / 2;
+        flake.x += Math.sin(flake.tiltAngle) * 2;
+        flake.tilt = Math.sin(flake.tiltAngle) * 10;
+
+        if (flake.y > height + 5) {
+          flake.y = -10;
+          flake.x = Math.random() * width;
+          flake.d = Math.random() * count;
+        }
+
+        if (flake.x > width + 5) {
+          flake.x = -5;
+        }
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+      for (const flake of flakes) {
+        ctx.beginPath();
+        ctx.arc(flake.x + flake.tilt, flake.y, flake.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      updateFlakes();
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    for (let i = 0; i < count; i += 1) {
+      flakes.push(createFlake());
+    }
+
+    window.addEventListener('resize', resize);
+    draw();
+  });
+</script>

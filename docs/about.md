@@ -48,3 +48,4 @@ I am Data Engineer and Business Intelligence Consultant
         <!-- <button onclick="valid_email($('input[name=user_email]').val())"> Validate Email </button> -->
         </form>
 </div>
+{% include footer-custom.html %}
